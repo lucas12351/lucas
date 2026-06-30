@@ -1,77 +1,107 @@
-* {
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.cabecalho {
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #7e3e1c;
-}
-
-.cartao {
-    width: 260px;
-    height: 200px;
-}
-
-.cartao-imagem {
-    width: 100%;
-}
-
-body {
+body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #f5f2f2;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
+.cabecalho{
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b7a35;
+}
+
+h1{
+    color: white;
+    font-size: 24px;
+}
+
+.cabecalho-link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main{
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
 }
 
-.cabecalho-link {
-    color: #fff;
-    text-decoration: none;
+h2{
+    margin-bottom: 30px;
 }
 
-h1 {
-    color: #fff;
-    font-size: 24px;
+section{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-footer {
-    background-color: #7e3e1c;
-    padding: 15px 25px;
-    color: #fff;
+.cartao{
+    width: 280px;
+    height: 360px;
+    perspective: 1000px;
 }
 
-.cartao-interno {
+.cartao-interno{
+    width: 100%;
+    height: 100%;
     position: relative;
-    transition: transform 0.8s;
+    transition: transform .8s;
     transform-style: preserve-3d;
 }
 
-.cartao:hover .cartao-interno {
+.cartao:hover .cartao-interno{
     transform: rotateY(180deg);
 }
 
-.cartao-frente, .cartao-verso {
+.cartao-frente,
+.cartao-verso{
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,.2);
     backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.cartao-verso {
+.cartao-verso{
     transform: rotateY(180deg);
 }
 
-section {
-    display: flex;
-    gap: 16px;
+.cartao-imagem{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.cartao p{
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer{
+    background-color: #0b7a35;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
